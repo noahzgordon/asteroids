@@ -2,9 +2,29 @@
 
 <html>
   <head>
-    <script type="text/javascript" src=""></script>
+    <style>
+    canvas {
+      border:5px solid black;
+    }
+    </style>
+    <script src="./keymaster/keymaster.js"></script>
+    <script type="text/javascript" src="./lib/utils.js"></script>
+    <script type="text/javascript" src="./lib/movingObject.js"></script>
+    <script type="text/javascript" src="./lib/asteroid.js"></script>
+    <script type="text/javascript" src="./lib/ship.js"></script>
+    <script type="text/javascript" src="./lib/bullet.js"></script>
+    <script type="text/javascript" src="./lib/game.js"></script>
+    <script type="text/javascript" src="./lib/gameView.js"></script>
   </head>
 
   <body>
+    <canvas id="game-canvas" width="1200" height="800"></canvas>
+    <script type="text/javascript">
+      var canvas = document.getElementById("game-canvas");
+      var ctx = canvas.getContext('2d');
+      var game = new Asteroids.Game();
+      var view = new Asteroids.GameView(game, ctx);
+      view.start();
+    </script>
   </body>
 </html>
