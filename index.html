@@ -20,10 +20,16 @@
   <body>
     <canvas id="game-canvas" width="1200" height="800"></canvas>
     <script type="text/javascript">
+      var img = new Image();
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0, 1200, 800);
+      };
+      img.src = 'nyan.jpg';
+
       var canvas = document.getElementById("game-canvas");
       var ctx = canvas.getContext('2d');
       var game = new Asteroids.Game();
-      var view = new Asteroids.GameView(game, ctx);
+      var view = new Asteroids.GameView(game, ctx, img);
       view.start();
     </script>
   </body>
