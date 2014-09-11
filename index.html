@@ -2,11 +2,7 @@
 
 <html>
   <head>
-    <style>
-    canvas {
-      border:5px solid black;
-    }
-    </style>
+		<link rel="stylesheet" href="style.css" type="text/css">
     <script src="./keymaster/keymaster.js"></script>
     <script type="text/javascript" src="./lib/utils.js"></script>
     <script type="text/javascript" src="./lib/movingObject.js"></script>
@@ -18,18 +14,18 @@
   </head>
 
   <body>
-    <canvas id="game-canvas" width="1200" height="800"></canvas>
+    <canvas id="game-canvas" width="1200" height="600"></canvas>
     <script type="text/javascript">
-      var img = new Image();
-      img.onload = function () {
-        ctx.drawImage(img, 0, 0, 1200, 800);
-      };
-      img.src = 'nyan.jpg';
+      // var img = new Image();
+      // img.onload = function () {
+      //   ctx.drawImage(img, 0, 0, 1200, 800);
+      // };
+      // img.src = 'nyan.jpg';
 
       var canvas = document.getElementById("game-canvas");
       var ctx = canvas.getContext('2d');
       var game = new Asteroids.Game();
-      var view = new Asteroids.GameView(game, ctx, img);
+      var view = new Asteroids.GameView(game, ctx);
       view.start();
     </script>
   </body>
