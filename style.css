@@ -70,3 +70,10 @@ canvas {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+video {
+  display: block;
+  width: 600px;
+  height: 60px;
+  margin: 10px auto;
+}
